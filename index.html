@@ -52,7 +52,17 @@
       // the canvas DOM size and WebGL render target sizes yourself.
       // config.matchWebGLToCanvasSize = false;
 
-   
+       // 💡 モバイル判定の if/else ブロックを削除し、
+      // すべてのデバイスでデスクトップの強制表示設定を適用する
+      
+      // デスクトップのクラスを維持
+      container.className = "unity-desktop"; 
+      
+      // canvasをコンテナに対してフルサイズで表示（CSSと連携します）
+      canvas.style.width = "100%";
+      canvas.style.height = "100%";
+      
+      loadingBar.style.display = "block";
 
       var script = document.createElement("script");
       script.src = loaderUrl;
